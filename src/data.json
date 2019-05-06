@@ -1,0 +1,166 @@
+{
+        "stations":{
+                "0001": {
+                        "stationID": "0001",
+                        "name":"First Station",
+                        "address": "any address",
+                        "image": "none station",
+                        "description": "this is first station that I create it !",
+                        "genreTitle": "Pop Music",
+                        "CountryName": "Iran"
+                },
+                "0002": {
+                        "stationID": "0002",
+                        "name": "Second Station",
+                        "address": "any other address",
+                        "image": "none station",
+                        "description": "this is the second one !",
+                        "genreTitle": "Instrumental",
+                        "CountryName": "UnitedStates"
+                }                
+        },
+        "users": {
+                "mhhlive77": {
+                        "username": "mhhlive77",
+                        "firstName": "Mohammad Hassan",
+                        "age": "21",
+                        "email": "mhhlive77@gmail.com",
+                        "password": "a1t3o7m7",
+                        "phoneNum": "+989391737588",
+                        "lastName": "Hajivandi",
+                        "countryName": "Iran"
+                },
+                "samadi98": {
+                        "username": "samadi98",
+                        "firstName": "Amir Hossein",
+                        "age": "21",
+                        "email": "samadipour@gmail.com",
+                        "password": "0123456789",
+                        "phoneNum": "+15555555555",
+                        "lastName": "Samadipour",
+                        "countryName": "UnitedStates"
+                }
+        },
+        "genres":{
+                "POPMusic": {
+                        "genreTitle": "POPMusic",
+                        "details": "This genre containes stations that play POP musics for listeners :)",
+                        "createdYear": "2019",
+                        "image": "none genre"
+                },
+                "InstrumentalMusic": {
+                        "genreTitle": "InstrumentalMusic",
+                        "details": "This genre have all stations that play the best archive of instrumental musics in the world !",
+                        "createdYear": "1990",
+                        "image": "none genre"
+                }
+        },
+        "playlists":{
+                "0001": {
+                        "playlistID": "0001",
+                        "name": "First Custom Playlist"
+                },
+                "0002": {
+                        "playlistID": "0002",
+                        "name": "Second Custom Playlist"
+                }
+        },
+        "countries":{
+                "Iran": {
+                        "continent": "Iran",
+                        "flag": "none flag",
+                        "lang":"Persian"
+                },
+                "UnitedStates": {
+                        "continent": "UnitedStates",
+                        "flag": "none flag",
+                        "lang":"English"
+                }
+        },
+        "transaction":{
+                "0000001": {
+                       " transactionNum": "0000001",
+                        "amount": "1000000",
+                        "time": "",
+                        "date": "",
+                        "success": "true",
+                        "username": "samadi98"
+                },
+                "0000002": {
+                        "transactionNum": "0000002",
+                        "amount": "9000",
+                        "time": "",
+                        "date": "",
+                        "success": "false",
+                        "username": "samadi98"
+                }
+        },
+        "comment":{
+                "00001": {
+                        "commentID": "00001",
+                        "content": "This is realy good stations that you gather all of them in here :D",
+                        "date": "",
+                        "time": "",
+                        "username": "mhhlive77",
+                        "stationID": "0001",
+                        "replyCommentID": ""
+                },
+                "00002": {
+                        "commentID": "00002",
+                        "content": "its realy not",
+                        "date": "",
+                        "time": "",
+                        "username": "samadi98",
+                        "stationID": "0001",
+                        "replyCommentID": "00001"
+                }
+        },
+        "userGenre":{
+                "POPMusic": {
+                       "genreTitle": "Pop Music",
+                        "username": "samadi98"
+                },
+                "InstrumentalMusics": {
+                        "genreTitle": "InstrumentalMusics",
+                        "username": "samadi98"
+                }
+        },
+        "userPlaylist":{
+                "0001": {
+                        "playlistID": "0001",
+                        "username": "mhhlive77"
+                },
+                "0002": {
+                        "playlistID": "0002",
+                        "username": "samadi98"
+                }
+        },
+        "stationSubscribe":{
+                "mhhlive77-0001": {
+                        "username": "mhhlive77",
+                        "stationID": "0001"
+                },
+                "mhhlive77-0002": {
+                        "username": "mhhlive77",
+                        "stationID": "0002"
+                },
+                "samadi98-0001": {
+                        "username": "samadi98",
+                        "stationID": "0001"
+                }
+        },
+        "stationPlaylist":{
+                "0001-0001": {
+                        "stationID": "0001",
+                        "playlistID": "0001"
+                },
+                "0002-0001": {
+                        "stationID": "0002",
+                        "playlistID": "0001"
+                },
+                "0001-0002": {
+                        "stationID": "0001",
+                        "playlistID": "0002"
+                }
+        }
+}
