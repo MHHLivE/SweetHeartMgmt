@@ -89,6 +89,14 @@ const reducer = (state, action) => {
                         navigator: state.tabsTree[id],
                 };
 
+                case 'CHANGE_TABLE-MODE':
+                let mode = action.payload.mode;
+                console.log(mode);
+                return{
+                        ...state,
+                        editTableMode : mode,
+                };
+
                 default:
                 return state;
         }
@@ -154,6 +162,7 @@ export class Provider extends Component {
                         icon: 'fas fa-home',
                         content: 'Home'
                 },
+                editTableMode : 'none',
                 dataTable:{
                         stations:[
                                 {
