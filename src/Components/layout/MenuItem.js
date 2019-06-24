@@ -7,6 +7,7 @@ class MenuItem extends Component {
         consoleLog = (title, type, body, dispatch) => {
                 // console.log('called !');
                 dispatch({type: 'LOG_INFO', payload: {title: title, type: type, body: body}});
+                // console.log(dispatch);
         }
 
         setBoard = (content, id, dispatch) => {

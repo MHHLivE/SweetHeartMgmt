@@ -1,7 +1,7 @@
 {
         "stations":{
                 "0001": {
-                        "stationID": "0001",
+                        "key": "0001",
                         "name":"First Station",
                         "address": "any address",
                         "image": "none station",
@@ -10,7 +10,7 @@
                         "CountryName": "Iran"
                 },
                 "0002": {
-                        "stationID": "0002",
+                        "key": "0002",
                         "name": "Second Station",
                         "address": "any other address",
                         "image": "none station",
@@ -21,7 +21,7 @@
         },
         "users": {
                 "mhhlive77": {
-                        "username": "mhhlive77",
+                        "key": "mhhlive77",
                         "firstName": "Mohammad Hassan",
                         "age": "21",
                         "email": "mhhlive77@gmail.com",
@@ -31,7 +31,7 @@
                         "countryName": "Iran"
                 },
                 "samadi98": {
-                        "username": "samadi98",
+                        "key": "samadi98",
                         "firstName": "Amir Hossein",
                         "age": "21",
                         "email": "samadipour@gmail.com",
@@ -43,13 +43,13 @@
         },
         "genres":{
                 "POPMusic": {
-                        "genreTitle": "POPMusic",
+                        "key": "POPMusic",
                         "details": "This genre containes stations that play POP musics for listeners :)",
                         "createdYear": "2019",
                         "image": "none genre"
                 },
                 "InstrumentalMusic": {
-                        "genreTitle": "InstrumentalMusic",
+                        "key": "InstrumentalMusic",
                         "details": "This genre have all stations that play the best archive of instrumental musics in the world !",
                         "createdYear": "1990",
                         "image": "none genre"
@@ -57,29 +57,29 @@
         },
         "playlists":{
                 "0001": {
-                        "playlistID": "0001",
+                        "key": "0001",
                         "name": "First Custom Playlist"
                 },
                 "0002": {
-                        "playlistID": "0002",
+                        "key": "0002",
                         "name": "Second Custom Playlist"
                 }
         },
         "countries":{
                 "Iran": {
-                        "continent": "Iran",
+                        "key": "Iran",
                         "flag": "none flag",
                         "lang":"Persian"
                 },
                 "UnitedStates": {
-                        "continent": "UnitedStates",
+                        "key": "UnitedStates",
                         "flag": "none flag",
                         "lang":"English"
                 }
         },
         "transaction":{
                 "0000001": {
-                       " transactionNum": "0000001",
+                       " key": "0000001",
                         "amount": "1000000",
                         "time": "",
                         "date": "",
@@ -87,7 +87,7 @@
                         "username": "samadi98"
                 },
                 "0000002": {
-                        "transactionNum": "0000002",
+                        "key": "0000002",
                         "amount": "9000",
                         "time": "",
                         "date": "",
@@ -97,7 +97,7 @@
         },
         "comment":{
                 "00001": {
-                        "commentID": "00001",
+                        "key": "00001",
                         "content": "This is realy good stations that you gather all of them in here :D",
                         "date": "",
                         "time": "",
@@ -106,7 +106,7 @@
                         "replyCommentID": ""
                 },
                 "00002": {
-                        "commentID": "00002",
+                        "key": "00002",
                         "content": "its realy not",
                         "date": "",
                         "time": "",
@@ -117,50 +117,50 @@
         },
         "userGenre":{
                 "POPMusic": {
-                       "genreTitle": "Pop Music",
-                        "username": "samadi98"
+                       "genres": "Pop Music",
+                        "users": "samadi98"
                 },
                 "InstrumentalMusics": {
-                        "genreTitle": "InstrumentalMusics",
-                        "username": "samadi98"
+                        "genres": "InstrumentalMusics",
+                        "users": "samadi98"
                 }
         },
         "userPlaylist":{
                 "0001": {
-                        "playlistID": "0001",
-                        "username": "mhhlive77"
+                        "playlists": "0001",
+                        "users": "mhhlive77"
                 },
                 "0002": {
-                        "playlistID": "0002",
-                        "username": "samadi98"
+                        "playlists": "0002",
+                        "users": "samadi98"
                 }
         },
         "stationSubscribe":{
                 "mhhlive77-0001": {
-                        "username": "mhhlive77",
-                        "stationID": "0001"
+                        "users": "mhhlive77",
+                        "stations": "0001"
                 },
                 "mhhlive77-0002": {
-                        "username": "mhhlive77",
-                        "stationID": "0002"
+                        "users": "mhhlive77",
+                        "stations": "0002"
                 },
                 "samadi98-0001": {
-                        "username": "samadi98",
-                        "stationID": "0001"
+                        "users": "samadi98",
+                        "stations": "0001"
                 }
         },
         "stationPlaylist":{
                 "0001-0001": {
-                        "stationID": "0001",
-                        "playlistID": "0001"
+                        "stations": "0001",
+                        "playlists": "0001"
                 },
                 "0002-0001": {
-                        "stationID": "0002",
-                        "playlistID": "0001"
+                        "stations": "0002",
+                        "playlists": "0001"
                 },
                 "0001-0002": {
-                        "stationID": "0001",
-                        "playlistID": "0002"
+                        "stations": "0001",
+                        "playlists": "0002"
                 }
         }
 }

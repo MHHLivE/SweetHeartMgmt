@@ -12,16 +12,18 @@ export class DataTabs extends Component {
                 dataset : {
                         row : [],
                         data : [],
-                        column : [],
-                        input : []
+                        column : []
                 }
+        }
+
+        consoleLog = (title, type, body, dispatch) => {
+                dispatch({type: 'LOG_INFO', payload: {title: title, type: type, body: body}});
         }
         
         makeComp(){
                 return(
                         <Consumer>
                                 { value => {
-                                        console.log(this.props.cardTitle);
                                         return(
                                                 <div className={ !value.menuSizeController ? 'board-class' : 'large-board'}>
                                                         <div className='card-holder'>
@@ -36,39 +38,40 @@ export class DataTabs extends Component {
         }
 
         render(){
-                let rowAttr, dataJSON, columnAttr, inputArrays, isChanged , nextState = null;
-                this.props.baseRef.once( 'value' ).then( snap => {
-                        dataJSON = snap.val();
-                        inputArrays = Object.keys(dataJSON[Object.keys(snap.val())[0]]);
-                        // console.log("input array : " + inputArrays);
-                        columnAttr = Object.keys(dataJSON[Object.keys(snap.val())[0]]);
-                        rowAttr = Object.keys(snap.val());
-                        // console.log("dataJSON : ");
-                        // console.log(dataJSON);
-                        // console.log(`columnAttr: ${columnAttr}\nrowAttr: ${rowAttr}`);
-                        nextState = {
-                                loading : false,
-                                dataset : {
-                                        row : rowAttr,
-                                        data : dataJSON,
-                                        column : columnAttr,
-                                        input : inputArrays
+                let rowAttr, dataJSON, columnAttr, isChanged , nextState = null;
+                try {
+                        this.props.baseRef.once( 'value' ).then( snap => {
+                                dataJSON = snap.val();
+                                columnAttr = Object.keys(dataJSON[Object.keys(snap.val())[0]]);
+                                rowAttr = Object.keys(snap.val());
+                                // console.log("dataJSON : ");
+                                // console.log(dataJSON);
+                                // console.log(`columnAttr: ${columnAttr}\nrowAttr: ${rowAttr}`);
+                                nextState = {
+                                        loading : false,
+                                        dataset : {
+                                                row : rowAttr,
+                                                data : dataJSON,
+                                                column : columnAttr
+                                        }
+                                };
+                                isChanged = !deepEqual(this.state, nextState);
+                                
+                                if (isChanged){
+                                        isChanged = true;
+                                        this.setState(nextState);
                                 }
-                        };
-                        isChanged = !deepEqual(this.state, nextState);
-                        
-                        if (isChanged){
-                                isChanged = true;
-                                this.setState(nextState);
-                        }
-                        
-                });
+                                
+                        });
+                }
+                catch(err) {
+                        console.log(err);
+                }
 
                 return (
                         <React.Fragment>
                                 {!this.state.loading ? (<Consumer>
                                 { value => {
-                                        // console.log(this.props.cardTitle);
                                         return(
                                                 <div className={ !value.menuSizeController ? 'board-class' : 'large-board'}>
                                                         <div className='card-holder'>

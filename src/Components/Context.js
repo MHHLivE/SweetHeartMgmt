@@ -75,7 +75,6 @@ const reducer = (state, action) => {
                 case 'LOG_INFO':
                 const length = state.log.length + 1;
                 const newLog = [{id: length, title: action.payload.title, type: action.payload.type, body: action.payload.body}];
-                // console.log(newLog);
                 return{
                         ...state,
                         log: state.log.concat(newLog),
@@ -83,7 +82,6 @@ const reducer = (state, action) => {
 
                 case 'CHANGE_BOARD':
                 let id = action.payload.id;
-                // console.log(id);
                 return{
                         ...state,
                         navigator: state.tabsTree[id],
@@ -91,11 +89,48 @@ const reducer = (state, action) => {
 
                 case 'CHANGE_TABLE-MODE':
                 let mode = action.payload.mode;
-                console.log(mode);
                 return{
                         ...state,
                         editTableMode : mode,
                 };
+
+                case 'UPDATE_DATA':
+                let data = action.payload;
+                let upFlag = false;
+                firebase.database().ref('/' + data.updTable + '/' + data.prevID).once('value').then(snap => {
+                        if(snap.val() === null){
+                                alert("ur key doesn't exists!");
+                        } else {
+                                upFlag = true;
+                        }
+                }).then(() => {
+                        if(upFlag){
+                                firebase.database().ref('/' + data.updTable + '/' + data.prevID).update(data.updata);
+                        }
+                });
+                return state;
+                
+                case 'ADD_DATA':
+                let tmpdata = action.payload;
+                let exFlag = true;
+                firebase.database().ref('/' + tmpdata.addTable + '/' + tmpdata.key).once('value').then(snap => {
+                        if(snap.val() === null){
+                                exFlag = false;
+                        } else {
+                                alert("ur key exists! please choose another key!");
+                        }
+                }).then(() => {
+                        if(!exFlag){
+                                firebase.database().ref('/' + tmpdata.addTable + '/' + tmpdata.key).set(tmpdata);
+                        }
+                });
+                
+                return state;
+                
+                case 'RMV_DATA':
+                let rmvInfo = action.payload;
+                firebase.database().ref('/' + rmvInfo.rmvTable + '/' + rmvInfo.rmvId).remove();
+                return state;
 
                 default:
                 return state;
